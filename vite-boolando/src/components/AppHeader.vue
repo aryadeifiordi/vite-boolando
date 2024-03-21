@@ -7,7 +7,7 @@
       </ul>
   
       <div class="boolean">
-        <img class="img-boolean" src="assets/img/img/boolean-logo.png" alt="">
+        <img class="img-boolean" src="/img/boolean-logo.png" alt="">
       </div>
   
       <div>
