@@ -1,5 +1,5 @@
 <script setup>
-import HelloWorld from './components/AppHeader.vue';
+import AppHeader from './components/AppHeader.vue';
 
 </script>
 
@@ -7,7 +7,7 @@ import HelloWorld from './components/AppHeader.vue';
   <div>
     <AppHeader />
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  
 </template>
 
 <style scoped>
