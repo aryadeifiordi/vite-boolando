@@ -11,14 +11,23 @@
     </div>
 
     <div>
-      <i class="fa-solid fa-bag-shopping"></i>
-      <i class="fa-regular fa-user"></i>
-      <i class="fa-regular fa-heart"></i>
+      <i class="fas fa-shopping-bag"></i>
+      <i class="far fa-user"></i>
+      <i class="far fa-heart"></i>
     </div>
   </header>
 </template>
 
 <script>
+import { faShoppingBag, faUser, faHeart } from '@fortawesome/free-solid-svg-icons';
+
+export default {
+  components: {},
+  data() {
+    return {};
+  },
+  methods: {},
+};
 </script>
 
 <style scoped>
