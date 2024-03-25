@@ -82,27 +82,22 @@ export default {
 .container {
   display: flex;
   flex-direction: column;
-  /* Cambio la direzione del flex container a verticale */
 }
 
 .row {
   flex: 1;
   display: flex;
   flex-direction: row;
-  /* Cambio la direzione del flex container a orizzontale */
   margin-bottom: 20px;
-  /* Aggiungo margine tra le righe */
 }
 
 .card {
   margin-right: 20px;
   flex: 1;
-  /* Rendo le cards flessibili per adattarsi alle dimensioni del contenitore */
 }
 
 .card:last-child {
   margin-right: 0;
-  /* Rimuovo il margine dall'ultima card di ogni riga */
 }
 
 .card-image {
@@ -131,21 +126,27 @@ export default {
 
 .box-green {
   background-color: green;
-  width: 40px;
-  height: 20px;
-  position: absolute;
-  bottom: 10px;
-  display: flex;
-  justify-content: space-around;
-}
+  width: fit-content;
 
-.box-red {
-  background-color: red;
-  width: 40px;
   height: 20px;
   position: absolute;
   bottom: 10px;
   display: flex;
   align-items: center;
+  padding: 0 5px;
+
+}
+
+.box-red {
+  background-color: red;
+  width: fit-content;
+
+  height: 20px;
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+
 }
 </style>
