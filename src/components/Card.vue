@@ -4,7 +4,7 @@
       <img class="card-img" :src="product.imageSrc" alt="">
       <div v-if="product.discount" class="box-red">{{ product.discount }}</div>
       <div v-if="product.sustainability" class="box-green">{{ product.sustainability }}</div>
-      <i class="fa-solid fa-heart card-heart"></i>
+      <i class="fa-solid fa-heart card-heart fa-3x"></i>
     </div>
     <div class="card-content">
       <h1>{{ product.brand }}</h1>

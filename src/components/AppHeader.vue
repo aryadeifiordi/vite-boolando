@@ -10,7 +10,7 @@
       <img class="img-boolean" src="/img/boolean-logo.png" alt="">
     </div>
 
-    <div>
+    <div class="icons">
       <i class="fas fa-shopping-bag"></i>
       <i class="far fa-user"></i>
       <i class="far fa-heart"></i>
@@ -49,8 +49,15 @@ export default {
   align-items: center;
 }
 
-.header-container i {
+.header-container .icons {
+  display: flex;
+  align-items: center;
+}
+
+.header-container .icons i {
   font-size: 30px;
   color: white;
+  margin-right: 1rem;
+
 }
 </style>
