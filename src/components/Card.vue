@@ -1,14 +1,32 @@
 <template>
-  <div class="card">
-    <div class="card-image">
-      <img class="card-img" :src="imageSrc" alt="">
-      <div v-if="discount" class="box-red">{{ discount }}</div>
-      <div v-if="sustainability" class="box-green">{{ sustainability }}</div>
-      <i class="fas fa-heart card-heart"></i>
+  <div class="container">
+    <div class="row">
+      <div class="card" v-for="(card, index) in cards.slice(0, 3)" :key="index">
+        <div class="card-image">
+          <img class="card-img" :src="card.imageSrc" alt="">
+          <div v-if="card.discount" class="box-red">{{ card.discount }}</div>
+          <div v-if="card.sustainability" class="box-green">{{ card.sustainability }}</div>
+          <i class="fa-solid fa-heart card-heart"></i>
+        </div>
+        <div class="card-content">
+          <h1>{{ card.brand }}</h1>
+          <h2>{{ card.title }}</h2>
+        </div>
+      </div>
     </div>
-    <div class="card-content">
-      <h1>{{ brand }}</h1>
-      <h2>{{ title }}</h2>
+    <div class="row">
+      <div class="card" v-for="(card, index) in cards.slice(3)" :key="index">
+        <div class="card-image">
+          <img class="card-img" :src="card.imageSrc" alt="">
+          <div v-if="card.discount" class="box-red">{{ card.discount }}</div>
+          <div v-if="card.sustainability" class="box-green">{{ card.sustainability }}</div>
+          <i class="fa-solid fa-heart card-heart"></i>
+        </div>
+        <div class="card-content">
+          <h1>{{ card.brand }}</h1>
+          <h2>{{ card.title }}</h2>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -17,21 +35,74 @@
 export default {
   data() {
     return {
-      brand: "Levi's",
-      title: "RELAXED FIT TEE UNISEX",
-      imageSrc: "/img/1.webp",
-      discount: "-30%",
-      sustainability: "sostenibilità",
+      cards: [
+        {
+          brand: "Levi's",
+          title: "RELAXED FIT TEE UNISEX",
+          imageSrc: "/img/1.webp",
+          discount: "-30%",
+          sustainability: "sostenibilità",
+        },
+        {
+          brand: "Guess",
+          title: "Roses Tee",
+          imageSrc: "/img/2.webp",
+          discount: "-30%",
+        },
+        {
+          brand: "Come zucchero filato",
+          title: "VOGLIA DI COLORI PASTELLO",
+          imageSrc: "/img/3.webp",
+          discount: "-30%",
+        },
+        {
+          brand: "Levi's",
+          title: "TEE UNISEX",
+          imageSrc: "/img/4.webp",
+          discount: "-50%",
+          sustainability: "sostenibilità",
+        },
+        {
+          brand: "Maya Deluxe",
+          title: "STRIPE BODICE",
+          imageSrc: "/img/5.webp",
+        },
+        {
+          brand: "Esprit",
+          title: "MAGLIONE-BLACK",
+          imageSrc: "/img/6.webp",
+        },
+      ]
     };
   },
 };
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  /* Cambio la direzione del flex container a verticale */
+}
+
+.row {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  /* Cambio la direzione del flex container a orizzontale */
+  margin-bottom: 20px;
+  /* Aggiungo margine tra le righe */
+}
+
 .card {
-  width: calc(100% / 3);
-  align-content: center;
-  overflow: hidden;
+  margin-right: 20px;
+  flex: 1;
+  /* Rendo le cards flessibili per adattarsi alle dimensioni del contenitore */
+}
+
+.card:last-child {
+  margin-right: 0;
+  /* Rimuovo il margine dall'ultima card di ogni riga */
 }
 
 .card-image {
