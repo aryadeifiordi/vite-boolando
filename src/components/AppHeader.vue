@@ -27,10 +27,12 @@ export default {
 <style scoped>
 .header-container {
   background-color: #ff5b00;
-  width: auto;
+  width: 100%;
   height: 50px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .choose {
@@ -58,6 +60,5 @@ export default {
   font-size: 30px;
   color: white;
   margin-right: 1rem;
-
 }
 </style>

@@ -26,7 +26,8 @@ export default {
 
 <style scoped>
 .card {
-  margin-right: 20px;
+  padding: 0 5px;
+
   flex: 1;
 }
 
