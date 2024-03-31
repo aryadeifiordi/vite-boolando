@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" @click="showModal(product)">
     <div class="card-image">
       <img class="card-img" :src="product.imageSrc" alt="">
       <div v-if="product.discount" class="box-red">{{ product.discount }}</div>
@@ -20,6 +20,11 @@ export default {
       type: Object,
       required: true
     }
+  },
+  methods: {
+    showModal(product) {
+      this.$emit('showModal', product);
+    }
   }
 };
 </script>
@@ -29,6 +34,7 @@ export default {
   padding: 0 5px;
 
   flex: 1;
+  cursor: pointer;
 }
 
 .card-image {

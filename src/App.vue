@@ -2,19 +2,22 @@
   <div class="product-grid">
     <AppHeader />
     <div class="grid-container">
-      <Card v-for="product in products" :key="product.id" :product="product" />
+      <Card v-for="product in products" :key="product.id" :product="product" @showModal="openModal" />
     </div>
+    <Modal :product="selectedProduct" v-if="modalOpened" @closeModal="closeModal" />
   </div>
 </template>
 
 <script>
 import AppHeader from './components/AppHeader.vue';
 import Card from './components/Card.vue';
+import Modal from './components/Modal.vue';
 
 export default {
   components: {
     AppHeader,
     Card,
+    Modal
   },
   data() {
     return {
@@ -67,9 +70,21 @@ export default {
           imageSrc: "/img/6.webp",
           category: "Bambini"
         },
+
       ],
+      modalOpened: false,
+      selectedProduct: null
     };
   },
+  methods: {
+    openModal(product) {
+      this.modalOpened = true;
+      this.selectedProduct = product;
+    },
+    closeModal() {
+      this.modalOpened = false;
+    }
+  }
 };
 </script>
 
